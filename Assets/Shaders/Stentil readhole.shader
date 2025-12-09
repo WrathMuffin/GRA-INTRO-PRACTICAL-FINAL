@@ -8,7 +8,7 @@ Shader "Custom/URP_StencilRead_Hole_BackObject"
 
     SubShader
     {
-        Tags { "RenderPipeline" = "UniversalRenderPipeline" "Queue" = "Geometry" }
+        Tags { "RenderPipeline" = "UniversalPipeline" "Queue" = "Geometry" }
 
         // Stencil operations
         Stencil
