@@ -10,6 +10,7 @@ Additional 2 shaders are used to enhance the water:
 - Scrolling (second half)
 
 Watched a short gameplay of the game scene in question:
+
 https://www.youtube.com/watch?v=rfOm8o0-GLQ
 
 # What was done:
@@ -51,7 +52,21 @@ When I built the scene, stencil shaders didn't appear, after asking, I removed t
 <img width="473" height="197" alt="image" src="https://github.com/user-attachments/assets/3bc203f7-3605-489e-82f6-1f4260de023a" />
 
 
-  # Polygon surface deform:
+  # Polygon surface deform + scrolling + reflection:
+This is applied to the plane to represent water under the bridge. For this shader, I decided to do it in shadergraph as I need constant visual feedback for testing (which the preview in the graph is really helpful).
 
+Shadergraph for the water:
 
-Why it was done:
+<img width="833" height="370" alt="image" src="https://github.com/user-attachments/assets/c07d0747-b295-4073-9e4c-db3049426247" />
+
+<img width="744" height="371" alt="image" src="https://github.com/user-attachments/assets/7b9b2fee-81dd-4dbd-bdb9-ac9c9ee9949e" />
+
+<img width="766" height="388" alt="image" src="https://github.com/user-attachments/assets/01e5ec0b-7170-48ef-a6f5-088b070d540b" />
+
+# Why it was done:
+
+Stencil acts as a window/x-ray sort, and since the bridge is detailed in terms of structure, I decided that putting these stencil planes on a cube lets me create these strcucture similar to the wario brigde, without having open blender and modeled this net-like structure of the beams.
+
+Water is naturaly reflective, so having reflection allows easier identification by the player that this is water. Since wario also dies (i think) in the water, having it moving and swaying around convays a sense of danger and powerful waves from the sea. Having scrolling textures for the foam and water it self conveys movements and using noise makes it chaotic and more random in general.
+
+More info in shadergraph notes.
